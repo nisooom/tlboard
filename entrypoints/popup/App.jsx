@@ -4,7 +4,7 @@ import wxtLogo from "/wxt.svg";
 import "./App.css";
 
 function App() {
-  return <div>Hello</div>;
+  return <div>TLBoard</div>;
 }
 
 export default App;

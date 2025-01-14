@@ -1,70 +1,86 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 640px;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --background: 270 12% 93%;
+    --foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --primary: 250.34 18.95% 30%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 250.48 48.84% 74.71%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 250 36.29% 51.37%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 215 20.2% 65.1%;
+    --radius: 0.5rem;
   }
-  a:hover {
-    color: #747bff;
+  body[data-theme="pink"] {
+    --background: 270 20% 98%;
+    --foreground: 240 8% 28%;
+    --primary: 321 35% 59%;
+    --accent: 321 35% 59%;
+    --secondary: 298 27% 77%;
   }
-  button {
-    background-color: #f9f9f9;
+  body[data-theme="cyan"] {
+    --background: 180 50% 98%;
+    --foreground: 180 33% 6%;
+    --primary: 181 44% 54%;
+    --accent: 181 44% 54%;
+    --secondary: 181 49% 72%;
+  }
+  body[data-theme="blue"] {
+    --background: 200 50% 98%;
+    --foreground: 200 27% 32%;
+    --primary: 199 61% 50%;
+    --accent: 199 61% 50%;
+    --secondary: 199 67% 72%;
+  }
+  body[data-theme="dark-blue"] {
+    --background: 0 0% 15%;
+    --foreground: 194 15% 77%;
+    --primary: 198 59% 52%;
+    --accent: 198 59% 52%;
+    --secondary: 198 24% 21%;
+  }
+  /* .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 216 34% 17%;
+  } */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
   }
 }
